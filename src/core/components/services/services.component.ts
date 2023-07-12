@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class ServicesComponent {
 
+  public selectedNumberImage = 1;
+
+
+
+  public onSelect(slider: number) {
+    this.selectedNumberImage = slider;
+  }
+
 }

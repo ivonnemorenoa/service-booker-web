@@ -1,8 +1,13 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RequestPageComponent } from './request-page.component';
+import { RouterModule, Routes } from '@angular/router';
 
-
+const routes: Routes = [
+  {
+    path: '',
+   component:RequestPageComponent,
+  }
+]
 
 @NgModule({
   declarations: [
@@ -12,7 +17,7 @@ import { RequestPageComponent } from './request-page.component';
     RequestPageComponent
   ],
   imports: [
-    CommonModule
+    RouterModule.forChild( routes )
   ]
 })
 export class RequestPageModule { }

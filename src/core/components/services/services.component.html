@@ -1,0 +1,9 @@
+<div class="slide-container">
+    <span *ngFor="let numberImage of [1,2,3,4,5,6,7]" class="slider-span" id="slider-span{{numberImage}}"></span>
+    <div class="image-slider">
+        <div *ngFor="let numberImage of [1,2,3,4,5,6,7]" class="slide-div" id="slide-{{numberImage}}">
+            <img src="assets/images/img1.jpg" alt="" id="img{{numberImage}}" class="img"
+                [ngClass]="{'slide-select':  numberImage === selectedNumberImage}" (click)="onSelect(numberImage)">
+        </div>
+    </div>
+</div>

@@ -8,6 +8,9 @@ import { ReferencesComponent } from './references.component';
   declarations: [
     ReferencesComponent
   ],
+  exports: [
+    ReferencesComponent
+  ],
   imports: [
     CommonModule
   ]

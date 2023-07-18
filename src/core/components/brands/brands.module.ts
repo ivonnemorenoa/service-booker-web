@@ -8,6 +8,9 @@ import { BrandsComponent } from './brands.component';
   declarations: [
     BrandsComponent
   ],
+  exports: [
+    BrandsComponent,
+  ],
   imports: [
     CommonModule
   ]

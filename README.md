@@ -29,8 +29,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 #### COMANDOS GITHUB
 
-# git status
-# git add . 
-# git commit -m "name"
-# git push origin ((nombre de la rama donde vamos a empujar la info))
-# git pull origin (nombre de la rama donde vamos a jalar la info)
+* git status
+* git add . 
+* git commit -m "name"
+* git push origin ((nombre de la rama donde vamos a empujar la info))
+* git pull origin (nombre de la rama donde vamos a jalar la info)

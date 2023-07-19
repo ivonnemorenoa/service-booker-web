@@ -4,7 +4,7 @@ import { HomePageComponent } from './home-page.component';
 import { ServicesModule } from 'src/core/components/services/services.module';
 import { BrandsModule } from 'src/core/components/brands/brands.module';
 import { ReferencesModule } from 'src/core/components/references/references.module';
-import { FooterModule } from 'src/app/footer/footer.module';
+
 
 
 const routes: Routes = [
@@ -24,7 +24,6 @@ const routes: Routes = [
   ],
   imports: [
     ServicesModule,
-    FooterModule,
     ReferencesModule,
     BrandsModule, 
     RouterModule.forChild( routes )

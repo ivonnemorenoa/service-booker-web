@@ -6,10 +6,13 @@ import { BrandsComponent } from './brands.component';
 
 @NgModule({
   declarations: [
-    BrandsComponent
+    BrandsComponent,
+  ],
+  exports: [
+    BrandsComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
   ]
 })
 export class BrandsModule { }

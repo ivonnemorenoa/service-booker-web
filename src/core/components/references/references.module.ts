@@ -6,7 +6,10 @@ import { ReferencesComponent } from './references.component';
 
 @NgModule({
   declarations: [
-    ReferencesComponent
+    ReferencesComponent,
+  ],
+  exports: [
+    ReferencesComponent,
   ],
   imports: [
     CommonModule

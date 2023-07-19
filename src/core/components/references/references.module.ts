@@ -11,6 +11,9 @@ import { ReferencesComponent } from './references.component';
   exports: [
     ReferencesComponent,
   ],
+  exports: [
+    ReferencesComponent
+  ],
   imports: [
     CommonModule
   ]

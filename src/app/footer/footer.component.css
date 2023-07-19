@@ -1,0 +1,9 @@
+.image{
+    width: 35px;
+    height: 35px;
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+}

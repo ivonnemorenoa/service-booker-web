@@ -1,16 +1,17 @@
+<div class="container-md">
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
 
-    <app-input-group [label]="'Nombre:'"  [fc]="form.controls.name">
-        <input type="text" class="form-control" id="name" formControlName="name" placeholder="Nombre y Apellido">
+    <app-input-group [label]="'Nombre:'" [fc]="form.controls.name">
+        <input type="text" class="form-control" id="name" formControlName="name" placeholder="Nombre y Apellido" [class.is-invalid]="form.get('name')?.invalid && form.get('name')?.touched">
     </app-input-group><br>
     <app-input-group [label]="'Email:'"  [fc]="form.controls.email">
-        <input type="text" class="form-control" id="email" formControlName="email" placeholder="Correo electronico">
+        <input type="text" class="form-control" id="email" formControlName="email" placeholder="Correo electronico" [class.is-invalid]="form.get('email')?.invalid && form.get('email')?.touched">
     </app-input-group><br>
     <app-input-group [label]="'Telefono:'"  [fc]="form.controls.phone">
-        <input type="text" class="form-control" id="phone" formControlName="phone" placeholder="Telefono">
+        <input type="text" class="form-control" id="phone" formControlName="phone" placeholder="Telefono" [class.is-invalid]="form.get('phone')?.invalid && form.get('phone')?.touched">
     </app-input-group><br>
     <app-input-group [label]="'Comentarios:'"  [fc]="form.controls.comments">
-        <textarea class="form-control" id="comments" formControlName="comments" placeholder="Comentarios"></textarea>
+        <textarea class="form-control" id="comments" formControlName="comments" placeholder="Comentarios" [class.is-invalid]="form.get('comments')?.invalid && form.get('comments')?.touched"></textarea>
     </app-input-group><br>
 
     
@@ -29,3 +30,4 @@
     <input type="submit" value="Enviar">
 
 </form>
+</div>

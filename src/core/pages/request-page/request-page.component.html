@@ -1,1 +1,41 @@
-adios!
+<div class="container-request">
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <app-input-group [label]="'Nombre:'" [fc]="name">
+            <input type="text" class="form-control" id="name" formControlName="name" placeholder="Nombre y Apellido">
+        </app-input-group>
+        <br>
+        <app-input-group [label]="'Celular:'" [fc]="phone">
+            <input type="text" class="form-control" id="phone" formControlName="phone" placeholder="Telefono Celular">
+        </app-input-group>
+        <br>
+        <app-input-group [label]="'Fecha:'" [fc]="date">
+            <input type="date" class="form-control" id="date" formControlName="date" placeholder="fecha">
+        </app-input-group>
+        <br>
+        <app-form-group [id]="'time'" [title]="'Hora:'" [abstractControl]="time.controls['value']">
+            <app-form-control-select [id]="'time'" [formGroup]="time">
+            </app-form-control-select>
+        </app-form-group>
+        <br>
+        <app-form-group [id]="'services'" [title]="'Servicios:'" [abstractControl]="services">
+            <app-form-control-select-multi [id]="'services'" [options]="servicesTypes" placeholder="Servicios">
+            </app-form-control-select-multi>
+        </app-form-group>
+        <br>
+        <app-input-group [label]="'Descripción de la problematica:'" [fc]="problem">
+            <input type="text" class="form-control" id="problem" formControlName="problem" placeholder="Ej. El minisplit de 1 TN esta goteando por dentro de la casa">
+        </app-input-group>
+        <br>
+        <app-input-group [label]="'Dirección:'" [fc]="address">
+            <input type="text" class="form-control" id="address" formControlName="address" placeholder="Calle #, Colonia, CP, Municipio ">
+        </app-input-group>
+        <br>
+        <app-input-group [label]="'Referencias de ubicación:'" [fc]="references">
+            <input type="text" class="form-control" id="references" formControlName="references" placeholder="Casa de dos pisos frente a un parque con un barandal negro ">
+        </app-input-group>
+        <br>
+        <input type="submit" value="Enviar">
+
+    </form>
+</div>

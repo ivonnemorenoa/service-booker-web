@@ -1,0 +1,10 @@
+.brands-container{
+    width: 100%;
+    overflow-x:auto;
+    display: flex;
+    gap: 20px;
+}
+
+.card{
+    min-width: 33%;
+}

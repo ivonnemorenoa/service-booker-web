@@ -1,0 +1,22 @@
+<div class="form-group-component" [ngClass]="{
+	'form-group-invalid': abstractControl?.invalid && abstractControl?.touched ,
+	'form-group-valid': abstractControl?.valid && abstractControl?.touched}">
+
+	<label [id]="id + '-title'" *ngIf="title || title === ''" [for]="id" class="form-group-label">
+		{{ title }} <span class="form-group-required" *ngIf="required">*</span>
+	</label>
+
+	<div class="form-group-content">
+		<ng-content></ng-content>
+	</div>
+
+	<div class="form-group-warning" *ngIf="!abstractControl?.valid && abstractControl?.touched">
+		<div *ngIf="abstractControl?.errors?.['required']">
+			Campo requerido.
+		</div>
+
+		<div *ngIf="!abstractControl?.errors?.['required'] && errors.length > 0" [id]="id + '-exception'">
+			{{errors[0]}}
+		</div>
+	</div>
+</div>

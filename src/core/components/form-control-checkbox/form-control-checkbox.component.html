@@ -1,0 +1,8 @@
+<div class="form-control-checkbox" *ngFor="let option of options; let i = index" [formGroup]="option">
+    <input class="form-control-checkbox-input" type="checkbox" [id]="id + '-option-' + i" formControlName="checked">
+    <label class="form-control-checkbox-label" [ngClass]="{'selected': option.value.checked}"
+        [for]="id + '-option-' + i">
+        {{ option.value.description }}
+    </label>
+   
+</div>

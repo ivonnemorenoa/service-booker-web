@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HeaderModule } from 'src/core/components/header/header.module';
 import { FooterModule } from 'src/core/components/footer/footer.module';
+import { FormControlCheckboxModule } from 'src/core/components/form-control-checkbox';
+import { FormControlSelectModule } from 'src/core/components/form-control-select/form-control-select.module';
 
 @NgModule({
   declarations: [
@@ -15,8 +17,11 @@ import { FooterModule } from 'src/core/components/footer/footer.module';
     AppRoutingModule,
     HeaderModule,
     FooterModule,
+    FormControlCheckboxModule,
+    FormControlSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
+  
 })
 export class AppModule { }

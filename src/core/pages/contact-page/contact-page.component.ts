@@ -29,21 +29,18 @@ export class ContactPageComponent {
 	});
 
 	constructor(
-		private formBuilder: FormBuilder
-	) {
-
-
+		private formBuilder: FormBuilder) {
 
 	}
 
 	ngAfterViewInit() {
 
-
 	}
 
 	onSubmit() {
-		console.log(this.form.value.name);
-
+		if (this.form.get('email')?.touched){
+			console.log(this.form.value.name);
+		}
 	}
 }
 

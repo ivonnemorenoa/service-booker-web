@@ -28,6 +28,7 @@ export interface RequestFormValue {
 	latitud: number,
 	longitud: number,
 
+  // public formrequest: FormGroup<RequestForm>= this.fb.group<R
 }
 
 export type ServiceType = 'MINISPLIT' | 'MAINTANCE';

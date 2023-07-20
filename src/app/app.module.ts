@@ -10,7 +10,7 @@ import { FormControlSelectModule } from 'src/core/components/form-control-select
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule, 

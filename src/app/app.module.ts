@@ -8,7 +8,7 @@ import { FooterModule } from 'src/core/components/footer/footer.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule, 

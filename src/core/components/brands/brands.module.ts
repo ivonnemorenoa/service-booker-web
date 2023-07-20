@@ -11,9 +11,6 @@ import { BrandsComponent } from './brands.component';
   exports: [
     BrandsComponent,
   ],
-  exports: [
-    BrandsComponent,
-  ],
   imports: [
     CommonModule,
   ]

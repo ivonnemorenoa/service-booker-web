@@ -21,14 +21,16 @@ export interface ContactFormValue {
 
 export class ContactPageComponent {
 
-	public form: FormGroup<ContactForm> = this.fb.group<ContactForm>({
+	public form: FormGroup<ContactForm> = this.formBuilder.group<ContactForm>({
 		name: new FormControl('', [Validators.required]),
 		email: new FormControl('', [Validators.required, Validators.email]),
 		phone: new FormControl('', [Validators.required, Validators.minLength(10)]),
 		comments: new FormControl('', [Validators.required]),
 	});
 
-	constructor(public fb: FormBuilder) {
+	constructor(
+		private formBuilder: FormBuilder
+	) {
 
 
 

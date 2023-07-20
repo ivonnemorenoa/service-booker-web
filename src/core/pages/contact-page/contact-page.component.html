@@ -1,5 +1,5 @@
 <div class="container-md">
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
 
     <app-input-group [label]="'Nombre:'" [fc]="form.controls.name">
         <input type="text" class="form-control" id="name" formControlName="name" placeholder="Nombre y Apellido">
@@ -17,5 +17,5 @@
     <br>
     <input type="submit" value="Enviar">
 
-</form>
+    </form>
 </div>

@@ -93,8 +93,6 @@ export class RequestPageComponent {
 		console.log(horas);
 
 
-
-
 		this.form = this.formBuilder.group<RequestForm>({
 			name: new FormControl('', [Validators.required]),
 			phone: new FormControl('', [Validators.required]),

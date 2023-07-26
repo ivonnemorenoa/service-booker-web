@@ -1,4 +1,4 @@
-<div class="slide-container">
+<!-- <div class="slide-container">
     <span *ngFor="let numberImage of [1,2,3,4,5,6,7]" class="slider-span" id="slider-span{{numberImage}}"></span>
     <div class="image-slider">
         <div *ngFor="let numberImage of [1,2,3,4,5,6,7]" class="slide-div" id="slide-{{numberImage}}">
@@ -6,4 +6,68 @@
                 [ngClass]="{'slide-select':  numberImage === selectedNumberImage}" (click)="onSelect(numberImage)">
         </div>
     </div>
-</div>
+</div> -->
+ 
+<div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel" >
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="2000">
+        <div class="card" style="width: 18rem;">
+            <div class="image-wrapper">
+                <img src="assets/images/minisplit.jpg" alt="...">
+            </div>
+            <div class="card-body">
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+      </div>
+      <div class="carousel-item" data-bs-interval="2000">
+        <div class="card" style="width: 18rem;">
+            <div class="image-wrapper">
+            <img src="assets/images/lavadora.jpg" alt="...">
+            </div>
+            <div class="card-body">
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+      </div>
+      <div class="carousel-item">
+        <div class="card" style="width: 18rem;">
+            <div class="image-wrapper">
+            <img src="assets/images/refrigerador.jpg"alt="...">
+        </div>
+            <div class="card-body">
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+      </div>
+      <div class="carousel-item">
+        <div class="card" style="width: 18rem;">
+            <div class="image-wrapper">
+            <img src="assets/images/estufa.jpeg" alt="...">
+        </div>
+            <div class="card-body">
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+      </div>
+      <div class="carousel-item">
+         
+        <div class="card" style="width: 18rem;">
+            <div class="image-wrapper">
+            <img src="assets/images/instalacion_electrica .jpg"  alt="...">
+        </div>
+            <div class="card-body">
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>

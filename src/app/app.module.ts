@@ -7,6 +7,7 @@ import { HeaderModule } from 'src/core/components/header/header.module';
 import { FooterModule } from 'src/core/components/footer/footer.module';
 import { FormControlCheckboxModule } from 'src/core/components/form-control-checkbox';
 import { FormControlSelectModule } from 'src/core/components/form-control-select/form-control-select.module';
+import { WhatsappModule } from 'src/core/components/whatsapp/whatsapp.module';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { FormControlSelectModule } from 'src/core/components/form-control-select
     FooterModule,
     FormControlCheckboxModule,
     FormControlSelectModule,
+    WhatsappModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

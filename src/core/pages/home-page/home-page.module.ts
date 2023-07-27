@@ -4,6 +4,7 @@ import { HomePageComponent } from './home-page.component';
 import { ServicesModule } from 'src/core/components/services/services.module';
 import { BrandsModule } from 'src/core/components/brands/brands.module';
 import { ReferencesModule } from 'src/core/components/references/references.module';
+import { SliderModule } from 'src/core/components/slider/slider.module';
 
 
 
@@ -26,6 +27,7 @@ const routes: Routes = [
     ServicesModule,
     ReferencesModule,
     BrandsModule, 
+    SliderModule,
     RouterModule.forChild( routes )
   ]
 })

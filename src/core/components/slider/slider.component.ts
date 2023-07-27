@@ -4,132 +4,119 @@ import { Component } from '@angular/core';
 export type DirectionType = 'left' | 'right';
 
 @Component({
-  selector: 'app-slider',
-  templateUrl: './slider.component.html',
-  styleUrls: ['./slider.component.scss']
+	selector: 'app-slider',
+	templateUrl: './slider.component.html',
+	styleUrls: ['./slider.component.scss']
 })
 export class SliderComponent {
+	private position = 0;
+	private stopped: boolean = false;
+	private direction: DirectionType = 'right';
+	private inTransition: boolean = false;
+	private sliderTrack!: HTMLElement | null | undefined;
+	private images: Element[] = [];
+	private widthCard: number = 0;
+	constructor() { }
 
-  private stopped: boolean = false;
-  private direction: DirectionType = 'left';
-  private inTransition: boolean = false;
+	ngAfterViewInit() {
+		this.sliderTrack = document.getElementById('sliderTrack');
 
-  constructor() {
-  }
+		if (!this.sliderTrack) {
+			return;
+		}
 
+		this.images = [...Array.from(this.sliderTrack.children)];
+		this.widthCard = this.sliderTrack.clientWidth / 3;
+		this.sliderTrack.style.transition = 'transform 0.2s linear';
+		this.sliderTrack.style.transform = `translateX(-${this.widthCard}px)`;
 
-  onMouseEnter() {
-    console.log('onMouseEnter');
+		setInterval(() => {
+			if (!this.stopped) {
+				this.moveSlider(this.direction);
+			}
+		}, 7000);
+	}
 
-    this.stopped = true;
-  }
+	onMouseEnter() {
+		this.stopped = true;
+	}
 
-  onMouseLeave() {
-    console.log('onMouseLeave');
-    this.stopped = false;
-  }
+	onMouseLeave() {
+		this.stopped = false;
+	}
 
+	public moveSlider(direction: DirectionType) {
+		this.direction = direction;
+		if (this.inTransition || !this.sliderTrack) {
+			return;
+		}
+		this.inTransition = true;
 
-  ngAfterViewInit() {
-    console.log('ngAfterViewInit')
+		if (direction === 'left') {
+			this.sliderTrack.style.transform = `translateX(${0}px)`;
+		} else {
+			this.sliderTrack.style.transform = `translateX(${-this.widthCard * 2}px)`;
+		}
 
+		setTimeout(() => {
+			if (!this.sliderTrack) {
+				return;
+			}
 
-    const sliderTrack: any = document.getElementById('sliderTrack');
-    const container: any = document.getElementById('container');
-    let currentIndex = 0;
+			this.sliderTrack.style.transition = 'none';
+			this.sliderTrack.style.transform = `translateX(-${this.widthCard}px)`;
 
-    const btnLeft: any = document.getElementById('btnLeft');
-    const btnRight: any = document.getElementById('btnRight');
+			if (direction === 'left') {
+				this._moveToLeft();
+			} else {
+				this._moveToRight();
+			}
 
-    // Clona los primeros elementos para que aparezcan al final
-    const sliderElements = [...sliderTrack.children];
-    const numElements = sliderElements.length;
-    // const clonedElements = sliderElements.slice(0, 3).map((el) => el.cloneNode(true));
-    const clonedElements = sliderElements.slice(numElements - 3, numElements).map((el) => el.cloneNode(true));
-    sliderTrack.append(...clonedElements);
-    const cloneCount = 3;
+			setTimeout(() => {
 
+				if (!this.sliderTrack) {
+					return;
+				}
 
+				this.sliderTrack.style.transition = 'transform 0.2s linear';
+				this.inTransition = false;
+			}, 10);
 
-    const moveSlider = (direction: 'left' | 'right') => {
-      this.direction = direction;
-      if (this.inTransition) {
-        return;
-      }
-
-      // Event Listeners para los botones de desplazamiento (izquierda y derecha)
-
-
-      this.inTransition = true;
-
-      const trackWidth = sliderTrack.clientWidth;
-      const numElements = sliderElements.length;
-
-      // const slideAmount = direction === 'left' ? -trackWidth / 3 : trackWidth / 3;
-      const slideAmount = direction === 'left' ? -trackWidth / cloneCount : trackWidth / cloneCount;
-      currentIndex = (currentIndex + numElements + (direction === 'left' ? 1 : -1)) % numElements;
-
-
-      sliderTrack.style.transform = `translateX(${slideAmount}px)`;
-
-      setTimeout(() => {
-        // Resetea la posición del slider después de la animación
-        sliderTrack.style.transition = 'none';
-        sliderTrack.style.transform = 'translateX(0)';
-
-        // Mueve los elementos clonados al final o al inicio según la dirección
-        if (direction === 'left') {
-          sliderTrack.append(sliderElements[currentIndex].cloneNode(true));
-        } else {
-          sliderTrack.prepend(sliderElements[currentIndex].cloneNode(true));
-        }
-
-        // Elimina los elementos clonados del principio o del final según la dirección
-        sliderTrack.removeChild(direction === 'left' ? sliderTrack.firstElementChild : sliderTrack.lastElementChild);
+		}, 300);
+	}
 
 
 
-        // Vuelve a habilitar la transición
-        setTimeout(() => {
-          sliderTrack.style.transition = 'transform 0.3s ease';
+	private _moveToLeft() {
+		if (!this.sliderTrack) {
+			return;
+		}
 
-          this.inTransition = false;
-        }, 100);
+		if (this.sliderTrack.lastElementChild) {
+			this.sliderTrack.removeChild(this.sliderTrack.lastElementChild);
+		}
 
-      }, 300);
-    }
+		const toFind = (this.position + this.images.length - 1) % this.images.length;
+		this.sliderTrack.prepend(this.images[toFind].cloneNode(true));
 
+		this.position--;
+		if (this.position == -1) {
+			this.position = this.images.length - 1;
+		}
+	}
 
+	private _moveToRight() {
+		if (!this.sliderTrack) {
+			return;
+		}
 
-    btnLeft.addEventListener('click', () => {
-      moveSlider('left')
-    });
-
-    btnRight.addEventListener('click', () => {
-      moveSlider('right')
-    });
-
-
-    container.addEventListener("wheel", ($event: any) => {
-      $event.stopPropagation();
-      $event.preventDefault();
-
-
-      if ($event.deltaX < 0) {
-        this.direction = 'left';
-        moveSlider('left')
-      } else if ($event.deltaX > 0) {
-        this.direction = 'right';
-        moveSlider('right')
-      }
-
-    }, { passive: true });
-
-
-    setInterval(() => {
-      if (!this.stopped) {
-        moveSlider(this.direction);
-      }
-    }, 2000);
-  }
+		if (this.sliderTrack.firstChild) {
+			this.sliderTrack.removeChild(this.sliderTrack.firstChild);
+		}
+		this.sliderTrack.append(this.images[this.position].cloneNode(true));
+		this.position++;
+		if (this.position === this.images.length) {
+			this.position = 0;
+		}
+	}
 }

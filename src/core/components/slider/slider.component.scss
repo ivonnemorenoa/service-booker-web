@@ -18,19 +18,13 @@
             right: 10px;
         }
     }
-}
 
-.slider-track {
-    display: flex;
-    transition: transform 0.3s ease;
-}
+    .slider-track {
+        display: flex;
+        transform: translate3d(0, 0, 0);
 
-/* Asegúrate de establecer el ancho adecuado para las imágenes o cards */
-.slider-track div {
-    flex: 0 0 calc(100% / 3);
-}
-
-.slider-image {
-    width: 100%;
-    // height: 350px;
+        .slider-image {
+            flex: 0 0 calc(100% / 3);
+        }
+    }
 }

@@ -63,14 +63,14 @@ export class SliderComponent {
 				return;
 			}
 
-			this.sliderTrack.style.transition = 'none';
-			this.sliderTrack.style.transform = `translateX(-${this.widthCard}px)`;
-
+			
 			if (direction === 'left') {
 				this._moveToLeft();
 			} else {
 				this._moveToRight();
 			}
+			this.sliderTrack.style.transition = 'none';
+			this.sliderTrack.style.transform = `translateX(-${this.widthCard}px)`;
 
 			setTimeout(() => {
 

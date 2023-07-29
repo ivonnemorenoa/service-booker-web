@@ -2,13 +2,15 @@
 <br>
 <div class="slider-container" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
 
-    <div class="slider-action action-left" (click)="moveSlider('left')">
-        LEFT
-    </div>
+    <button class="carousel-control-prev slider-action action-left" (click)="moveSlider('left')">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
 
-    <div id="btnRight" class="slider-action action-right" (click)="moveSlider('right')">
-        RIGHT
-    </div>
+    <button class="carousel-control-next slider-action action-right" (click)="moveSlider('right')">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
 
     <div class="slider-track" id="sliderTrack">
         <section class="slider-image"> 

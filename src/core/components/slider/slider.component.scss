@@ -1,22 +1,27 @@
-
 .slider-container {
     width: 100%;
     overflow: hidden;
     position: relative;
 
     .slider-action {
-        color: red;
+        // background-color: green;
         position: absolute;
-        top: 50%;
+        // top: 50%;1
         z-index: 2;
         user-select: none;
         cursor: pointer;
 
         &.action-left {
             left: 10px;
+            margin-left: -70px;
         }
         &.action-right {
+            margin-right: -70px;
             right: 10px;
+        }
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            filter: contrast(0);
         }
     }
 
@@ -30,41 +35,39 @@
     }
 
     .card {
-    position: relative;
-    overflow: hidden;
-    scale: .7;
-  }
+        position: relative;
+        overflow: hidden;
+        scale: 0.7;
+    }
 
-  .card-img-overlay {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* Opacidad leve */
-    color: #fff; /* Texto blanco */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
+    .card-img-overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.5); /* Opacidad leve */
+        color: #fff; /* Texto blanco */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
 
-  .card:hover .card-img-overlay {
-    opacity: 1; /* Mostrar al pasar el mouse */
-  }
+    .card:hover .card-img-overlay {
+        opacity: 1; /* Mostrar al pasar el mouse */
+    }
 }
 
-.image-wrapper{
-    
+.image-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
 
-.image-wrapper img{
+.image-wrapper img {
     height: 15vw;
     // width: 22vw;
     max-width: 100%;

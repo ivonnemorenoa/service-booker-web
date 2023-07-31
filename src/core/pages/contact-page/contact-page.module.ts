@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { InputGroupModule } from 'src/core/components/input-group/input-group.module';
+import { MapLimitModule } from 'src/core/components/map-limit/map-limit.module';
 
 const routes: Routes = [
   {
@@ -23,7 +24,8 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild( routes ),
     ReactiveFormsModule,
-    InputGroupModule,    
+    InputGroupModule,  
+    MapLimitModule,  
   ]
 })
 export class ContactPageModule { }

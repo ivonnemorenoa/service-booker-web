@@ -25,7 +25,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "node_modules/leaflet/dist/leaflet.css",
+              "src/styles.scss"
             ],
             "scripts": [
             ]
@@ -94,6 +95,11 @@
           }
         }
       }
+    }
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "style": "scss"
     }
   },
   "cli": {

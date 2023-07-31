@@ -6,6 +6,7 @@ import { InputGroupModule } from 'src/core/components/input-group/input-group.mo
 import { FormGroupModule } from 'src/core/components/form-group/form-group.module';
 import { FormControlSelectModule } from 'src/core/components/form-control-select/form-control-select.module';
 import { FormControlSelectMultiModule } from 'src/core/components/form-control-select-multi/form-control-select-multi.module';
+import { MapLocationModule } from 'src/core/components/map-location/map-location.module';
 
 const routes: Routes = [
   {
@@ -27,7 +28,8 @@ const routes: Routes = [
     FormGroupModule,
     FormControlSelectModule,
     FormControlSelectMultiModule,
-    RouterModule.forChild( routes )
+    RouterModule.forChild( routes ),
+    MapLocationModule,
   ]
 })
 export class RequestPageModule { }
